@@ -11,7 +11,7 @@ Tu trabajo es preparar la app para eso y escribir las lecciones.
 
 **Ubicar el kit (`<KIT>`):** es la carpeta dos niveles arriba de este skill (la que tiene
 `pnpm-workspace.yaml`). Si ahí no está, lee la ruta del archivo `kit-path` junto a este `SKILL.md`.
-Si falta `<KIT>/tools/training-cli/dist/cli.js`, compila una vez: `pnpm install && pnpm build` en `<KIT>`.
+Si falta `<KIT>/tools/training-cli/dist/cli.js`, compila una vez: `pnpm install --frozen-lockfile && pnpm build` en `<KIT>`.
 Abajo, `training` = `node <KIT>/tools/training-cli/dist/cli.js`.
 
 Referencia detallada (plantillas, pasos de captura, errores comunes): `reference.md` junto a este archivo.

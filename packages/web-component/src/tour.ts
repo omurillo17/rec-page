@@ -45,6 +45,10 @@ function injectCss(): void {
   document.head.append(style);
 }
 
+/** Driver.js writes popover and button texts with innerHTML; content is always plain text. */
+export const escapeHtml = (text: string) =>
+  text.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+
 export function isValidSelector(selector: string): boolean {
   try {
     document.createDocumentFragment().querySelector(selector);
@@ -69,8 +73,8 @@ export function toDriveSteps(tour: Tour, labels: TourLabels = defaultTourLabels)
       skipMissingElement: s.optional,
       data: { expectsElement: Boolean(s.element) },
       popover: {
-        title: s.title,
-        description: s.description,
+        title: escapeHtml(s.title),
+        description: escapeHtml(s.description),
         side: s.side === 'over' ? undefined : s.side,
         align: s.align,
         onPopoverRender: (popover, { state }) => {
@@ -106,11 +110,11 @@ export function startTour(tour: Tour, labels: Partial<TourLabels> = {}): Promise
       showProgress: true,
       allowClose: true,
       popoverClass: 'st-tour',
-      nextBtnText: l.next,
-      prevBtnText: l.prev,
-      doneBtnText: l.done,
+      nextBtnText: escapeHtml(l.next),
+      prevBtnText: escapeHtml(l.prev),
+      doneBtnText: escapeHtml(l.done),
       closeBtnLabel: l.close,
-      progressText: l.progress,
+      progressText: escapeHtml(l.progress),
       animate: !globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
       onNextClick: (_el, _step, { driver: drv }) => {
         if (drv.isLastStep()) completed = true;

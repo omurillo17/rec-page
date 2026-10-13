@@ -34,6 +34,12 @@ explores the app, writes the scripts and generates the videos.
 > The detailed docs in [`docs/`](docs) and the demo content are in Spanish. Schemas, code and the CLI are
 > language-neutral; set `lang` and `locale` in your scripts and config.
 
+## Status
+
+**Beta (0.x).** Tested (unit tests, a real 12-lesson production app), but formats and commands may still
+change before 1.0. Read [SECURITY.md](SECURITY.md) before running `training build` on a project you did not write:
+its config runs shell commands.
+
 ## Quick start
 
 Requirements: Node.js ≥ 20 and pnpm 10. Python ≥ 3.10 only for the Django example.
@@ -84,7 +90,7 @@ with fictitious data, explores the screens, writes the lessons (capture steps + 
 /plugin install rec-page --marketplace omurillo17/rec-page
 ```
 
-On first use, the skill builds the kit (`pnpm install && pnpm build`) inside the plugin folder.
+On first use, the skill builds the kit (`pnpm install --frozen-lockfile && pnpm build`) inside the plugin folder.
 
 **From this checkout.** Copy the skill to your user skills folder (run it again after updating):
 

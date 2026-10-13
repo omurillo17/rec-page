@@ -63,6 +63,19 @@ describe('toDriveSteps', () => {
       popover: { title: 'A', description: 'a', side: 'left' },
     });
   });
+
+  it('passes tour texts to Driver.js as plain text (Driver.js uses innerHTML)', () => {
+    const tour = parseTour({
+      id: 't',
+      module: 'm',
+      title: 'T',
+      steps: [{ title: '<b>Hola</b>', description: '<img src=x onerror="alert(1)"> & "más"' }],
+    });
+    expect(toDriveSteps(tour).steps[0]!.popover).toMatchObject({
+      title: '&lt;b&gt;Hola&lt;/b&gt;',
+      description: '&lt;img src=x onerror=&quot;alert(1)&quot;&gt; &amp; &quot;más&quot;',
+    });
+  });
 });
 
 describe('<seventeen-training>', () => {

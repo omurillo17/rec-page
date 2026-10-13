@@ -31,6 +31,12 @@ explora la app, escribe los guiones y genera los videos.
 <seventeen-training manifest="/training/manifest.json" module="clientes"></seventeen-training>
 ```
 
+## Estado
+
+**Beta (0.x).** Probado (pruebas automatizadas y una app real con 12 lecciones), pero los formatos y comandos
+pueden cambiar antes de 1.0. Lee [SECURITY.md](SECURITY.md) antes de ejecutar `training build` en un proyecto
+que no escribiste: su configuración ejecuta comandos.
+
 ## Inicio rápido
 
 Requisitos: Node.js ≥ 20 y pnpm 10. Python ≥ 3.10 solo para el ejemplo de Django.
@@ -82,7 +88,7 @@ con datos ficticios, explora las pantallas, escribe las lecciones (pasos de capt
 /plugin install rec-page --marketplace omurillo17/rec-page
 ```
 
-La primera vez que se use, la skill compila el kit (`pnpm install && pnpm build`) dentro de la carpeta
+La primera vez que se use, la skill compila el kit (`pnpm install --frozen-lockfile && pnpm build`) dentro de la carpeta
 del plugin.
 
 **Desde este checkout.** Copia la skill a tu carpeta de skills de usuario (vuelve a ejecutarlo tras actualizar):
