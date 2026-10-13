@@ -1,4 +1,5 @@
 # Generación de videos
+[English](en/videos.md) · **Español**
 
 Este flujo convierte un **guion JSON** y **capturas reales** en un borrador MP4 con subtítulos
 WebVTT sincronizados, miniatura y capítulos. Usa Remotion (React → fotogramas en Chrome

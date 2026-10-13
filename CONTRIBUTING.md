@@ -35,9 +35,10 @@ pnpm typecheck
 
 - One change per pull request, with a short description of what it changes and why.
 - Add or update a test when you change behavior.
-- Update `README.md`, `README.es.md` or `docs/` when you change a command, an option or a format.
+- Update `README.md`, `README.es.md`, `docs/` and `docs/en/` when you change a command, an option or a format
+  (if you only write one language, say so in the pull request and a maintainer will translate it).
 - Keep backward compatibility of the manifest, tours and video scripts. If a breaking change is
-  unavoidable, follow [docs/actualizacion.md](docs/actualizacion.md).
+  unavoidable, follow [docs/en/upgrading.md](docs/en/upgrading.md).
 - Do not commit generated output (`dist/`, `out/`, videos, audio) or downloaded voices/browsers.
 
 ## Content and privacy

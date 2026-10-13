@@ -1,4 +1,5 @@
 # Arquitectura
+[English](en/architecture.md) · **Español**
 
 ## Principios aplicados
 

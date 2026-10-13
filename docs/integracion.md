@@ -1,4 +1,5 @@
 # Integración
+[English](en/integration.md) · **Español**
 
 El kit **no sustituye** la autenticación de la app. Los pasos son siempre los mismos:
 

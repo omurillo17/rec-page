@@ -31,8 +31,8 @@ explores the app, writes the scripts and generates the videos.
 <seventeen-training manifest="/training/manifest.json" module="clientes"></seventeen-training>
 ```
 
-> The detailed docs in [`docs/`](docs) and the demo content are in Spanish. Schemas, code and the CLI are
-> language-neutral; set `lang` and `locale` in your scripts and config.
+> The demo content is in Spanish. Schemas, code and the CLI are language-neutral; set `lang` and
+> `locale` in your scripts and config.
 
 ## Status
 
@@ -76,7 +76,7 @@ The React demo starts with `pnpm dev:react` (http://localhost:5174).
 | [apps/demo-react](apps/demo-react) | React demo with its own content. |
 | [examples/django-integration](examples/django-integration) | Django project: manifest filtered by groups and protected files (Range and X-Accel-Redirect). |
 | [skills/videos-capacitacion](skills/videos-capacitacion) | Claude Code skill that applies the kit to any app. |
-| [docs](docs) | Architecture, content format, integration, security, videos and upgrades (Spanish). |
+| [docs/en](docs/en) | Architecture, content format, integration, security, videos and upgrades ([Spanish](docs)). |
 
 ## Claude Code plugin (any project)
 
@@ -101,6 +101,17 @@ pnpm skills:install
 Then, in any project, ask Claude Code: *"generate the training videos for this app"*.
 With other agents, tell them to follow `skills/videos-capacitacion/SKILL.md`.
 
+## Documentation
+
+1. [Architecture and contracts](docs/en/architecture.md)
+2. [Content format](docs/en/content.md): manifest, tours and scripts
+3. [Integration](docs/en/integration.md): Next.js, React, Django, HTML and other frameworks
+4. [Security](docs/en/security.md)
+5. [Video generation](docs/en/videos.md): requirements and licenses
+6. [Upgrading without breaking apps](docs/en/upgrading.md)
+
+Spanish versions: [`docs/`](docs).
+
 ## Commands
 
 | Command | What it does |
@@ -113,7 +124,7 @@ With other agents, tell them to follow `skills/videos-capacitacion/SKILL.md`.
 | `pnpm training render --input <script.json> --out <folder>` | Renders MP4, VTT and JPG. |
 | `pnpm training preview --input <script.json>` | Opens Remotion Studio with the script. |
 | `pnpm training narrate --input <script.json>` | Local Windows voice-over (only scenes whose text changed). |
-| `pnpm training build --input <folder>` | **Full incremental pipeline**: demo server, screenshots, voice-over, render and the app's data file. See [docs/videos.md](docs/videos.md). |
+| `pnpm training build --input <folder>` | **Full incremental pipeline**: demo server, screenshots, voice-over, render and the app's data file. See [docs/en/videos.md](docs/en/videos.md). |
 | `pnpm --filter demo-html capture` | Takes real screenshots of the running demo, with measured coordinates. |
 
 ## License
@@ -128,7 +139,7 @@ shipped to the browser includes only Zod and Driver.js, both MIT:
 - **FFmpeg**, bundled by Remotion, is GPL. Using it to produce videos creates no obligations; do not
   redistribute `node_modules` inside installers.
 
-Details in [docs/videos.md](docs/videos.md).
+Details in [docs/en/videos.md](docs/en/videos.md).
 
 ## Contributing
 

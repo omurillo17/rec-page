@@ -1,4 +1,5 @@
 # Actualizar el kit sin romper las aplicaciones
+[English](en/upgrading.md) · **Español**
 
 ## Versiones
 

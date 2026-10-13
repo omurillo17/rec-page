@@ -1,4 +1,5 @@
 # Formato del contenido
+[English](en/content.md) · **Español**
 
 Cada aplicación guarda su capacitación en una carpeta propia, versionada con su código:
 

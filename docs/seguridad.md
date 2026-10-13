@@ -1,4 +1,5 @@
 # Seguridad
+[English](en/security.md) · **Español**
 
 **Regla central: la aplicación anfitriona controla la autorización. El kit solo muestra el
 contenido que la app le entrega.**
