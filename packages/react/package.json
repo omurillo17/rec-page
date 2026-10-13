@@ -1,15 +1,46 @@
 {
   "name": "@seventeen-training/react",
-  "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "React / Next.js adapter for <seventeen-training>. SSR-safe: the Web Component is loaded only in the browser.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omurillo17/rec-page.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/omurillo17/rec-page#readme",
+  "bugs": "https://github.com/omurillo17/rec-page/issues",
   "type": "module",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
-  "files": ["dist", "src"],
-  "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit" },
-  "dependencies": { "@seventeen-training/web": "workspace:*" },
-  "peerDependencies": { "react": ">=18" },
-  "devDependencies": { "@types/react": "19.3.0", "@types/react-dom": "19.3.0", "react": "19.3.0", "react-dom": "19.3.0" }
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@seventeen-training/web": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -37,7 +37,17 @@ explora la app, escribe los guiones y genera los videos.
 pueden cambiar antes de 1.0. Lee [SECURITY.md](SECURITY.md) antes de ejecutar `training build` en un proyecto
 que no escribiste: su configuración ejecuta comandos.
 
-## Inicio rápido
+## Usarlo en tu app (sin clonar)
+
+```bash
+npx rec-page build --input capacitacion-videos
+```
+
+`rec-page` es el CLI en npm (`training` es un alias). Acepta los mismos comandos de la tabla [Comandos](#comandos).
+Para servir los videos detrás del login de tu app, usa `serveTrainingFile` de `@seventeen-training/core/server`
+([ejemplo con Next.js](docs/integracion.md#nextjs-app-router)).
+
+## Inicio rápido (este repositorio)
 
 Requisitos: Node.js ≥ 20 y pnpm 10. Python ≥ 3.10 solo para el ejemplo de Django.
 La voz automática usa las voces de Windows (SAPI); en macOS o Linux graba el audio y usa `narration.audio`.

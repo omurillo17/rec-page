@@ -1,4 +1,4 @@
-# @seventeen-training/cli
+# rec-page (CLI)
 
 ```
 training validate --input <carpeta|manifest.json>   Manifiesto, referencias, recorridos, MP4, imágenes, WebVTT y secretos

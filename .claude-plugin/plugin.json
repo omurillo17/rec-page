@@ -1,10 +1,17 @@
 {
   "name": "rec-page",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Graba videos de tu app web a partir de un guion: capturas reales, voz, subtítulos, capítulos y resaltados. Incluye la skill videos-capacitacion.",
-  "author": { "name": "Seventeen Corp" },
+  "author": {
+    "name": "Seventeen Corp"
+  },
   "license": "MIT",
   "repository": "https://github.com/omurillo17/rec-page",
   "homepage": "https://github.com/omurillo17/rec-page",
-  "keywords": ["capacitacion", "videos", "tutoriales", "remotion"]
+  "keywords": [
+    "capacitacion",
+    "videos",
+    "tutoriales",
+    "remotion"
+  ]
 }

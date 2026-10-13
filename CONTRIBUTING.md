@@ -41,6 +41,18 @@ pnpm typecheck
   unavoidable, follow [docs/en/upgrading.md](docs/en/upgrading.md).
 - Do not commit generated output (`dist/`, `out/`, videos, audio) or downloaded voices/browsers.
 
+## Releasing (maintainers)
+
+1. Bump `version` in every `packages/*/package.json`, `tools/training-cli/package.json` and
+   `.claude-plugin/plugin.json` (all packages share one version).
+2. `pnpm test`, `pnpm typecheck` and `claude plugin validate .` must pass.
+3. Commit, tag (`git tag v0.3.0`) and push the tag; write the notes in GitHub Releases.
+4. Publish to npm (`pnpm` replaces `workspace:*` with the real versions):
+
+```bash
+pnpm -r publish --access public
+```
+
 ## Content and privacy
 
 Screenshots, scripts and examples must use **fictitious data only**. Never include real names,

@@ -1,13 +1,38 @@
 {
   "name": "@seventeen-training/content-schema",
-  "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Zod schemas and types for Seventeen Training Kit content (manifest, tours, video scripts).",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omurillo17/rec-page.git",
+    "directory": "packages/content-schema"
+  },
+  "homepage": "https://github.com/omurillo17/rec-page#readme",
+  "bugs": "https://github.com/omurillo17/rec-page/issues",
   "type": "module",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
   },
-  "files": ["dist", "src", "schema"],
-  "scripts": { "build": "tsc -p tsconfig.json && node scripts/emit-json-schema.mjs", "typecheck": "tsc -p tsconfig.json --noEmit" },
-  "dependencies": { "zod": "4.6.6" }
+  "files": [
+    "dist",
+    "src",
+    "schema"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/emit-json-schema.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "zod": "4.6.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }

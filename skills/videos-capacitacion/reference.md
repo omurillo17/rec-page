@@ -131,7 +131,8 @@ Para Django, Rails o PHP aplica la misma idea: settings/env de demo, base aislad
   (`src`, `poster`, `captions[0].src`, `durationSec`, `chapters`). Reproductor nativo con `<track>` WebVTT,
   capítulos, velocidad y transcripción a partir del mismo `.vtt`.
 - Si no tiene: `<seventeen-training manifest="…" module="…">` del kit (ver `<KIT>/docs/integracion.md`).
-- Los videos van en una carpeta servida **detrás del login** si la app es interna.
+- Los videos van en una carpeta servida **detrás del login** si la app es interna: fuera de `public/` y con
+  `serveTrainingFile` (`@seventeen-training/core/server`) en una ruta que revisa la sesión.
 
 ## Licencias y voz
 

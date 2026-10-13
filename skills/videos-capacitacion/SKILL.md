@@ -30,6 +30,10 @@ Referencia detallada (plantillas, pasos de captura, errores comunes): `reference
 5. Los guiones empiezan con `"status": "draft"` (marca BORRADOR). Solo pásalos a `"verified"` si el usuario
    lo pide o confirma que revisó el procedimiento.
 6. No hagas commit ni despliegues sin que el usuario lo pida. No modifiques trabajo sin commit ajeno a la tarea.
+7. **Licencia de Remotion, antes de renderizar.** Remotion es gratis para personas, organizaciones sin fines de
+   lucro y empresas de hasta 3 empleados; más grandes necesitan Company License (remotion.dev/license).
+   Pregúntale al usuario al inicio si su organización califica. Si ya lo confirmó en este proyecto
+   (`capacitacion-videos/README.md` lo dice), no vuelvas a preguntar.
 
 ## Flujo
 
@@ -41,6 +45,10 @@ Referencia detallada (plantillas, pasos de captura, errores comunes): `reference
   qué servicios externos llama cada pantalla al cargar.
 - Si la app ya tiene un módulo de ayuda/capacitación, intégrate a él.
   Si no tiene, usa el Web Component del kit (`<seventeen-training>`) o el adaptador React.
+- Contenido interno: los videos van **fuera de `public/`** y se sirven con una ruta que revisa la sesión.
+  En Next.js (y frameworks con `Request`/`Response`) usa `serveTrainingFile` de `@seventeen-training/core/server`
+  (ejemplo en `<KIT>/docs/integracion.md`, sección Next.js); no escribas el manejo de `Range` a mano.
+  En Django, copia el patrón de `<KIT>/examples/django-integration`.
 - Lista las lecciones con el usuario: una lección = una pantalla o un procedimiento, 30–90 s.
 
 ### 2. Entorno demo dentro de la app: `capacitacion-videos/demo/`
@@ -97,7 +105,17 @@ Si una región falla («no encontré: x»), corrige el selector (ver errores com
 - Apaga lo que levantaste (servidor demo, base demo) y borra cachés generadas por el dev server si rompen
   el build (en Next.js: `.next/dev`).
 
-### 8. Reportar
+### 8. Dejar instrucciones en la app
+
+Crea o actualiza `capacitacion-videos/README.md` con: qué hay en la carpeta, cómo entrar a la demo (sin escribir
+contraseñas: remite al encabezado del seed), la licencia de Remotion confirmada por el usuario y el comando para
+regenerar, que no depende de dónde esté instalado el kit:
+
+```bash
+npx rec-page@0.3 build --input capacitacion-videos
+```
+
+### 9. Reportar
 
 Qué lecciones se generaron (duración), qué se verificó, diferencias encontradas entre la lección escrita y la
 interfaz, hallazgos de seguridad vistos de paso, y qué falta (revisión humana, commit).

@@ -1,17 +1,51 @@
 {
-  "name": "@seventeen-training/cli",
+  "name": "rec-page",
+  "version": "0.3.0",
+  "description": "Record videos of your web app from a JSON script: real screenshots, voice-over, captions and chapters (CLI: rec-page / training).",
   "license": "MIT",
-  "version": "0.1.0",
-  "description": "training validate | list | render | preview — content tooling for Seventeen Training Kit.",
-  "type": "module",
-  "bin": { "training": "./dist/cli.js" },
-  "exports": {
-    ".": { "types": "./dist/validate.d.ts", "default": "./dist/validate.js" }
+  "keywords": [
+    "video",
+    "screen-recording",
+    "tutorial",
+    "training",
+    "remotion",
+    "screenshots",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omurillo17/rec-page.git",
+    "directory": "tools/training-cli"
   },
-  "files": ["dist", "src"],
-  "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit" },
+  "homepage": "https://github.com/omurillo17/rec-page#readme",
+  "bugs": "https://github.com/omurillo17/rec-page/issues",
+  "type": "module",
+  "bin": {
+    "rec-page": "./dist/cli.js",
+    "training": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/validate.d.ts",
+      "default": "./dist/validate.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
   "dependencies": {
     "@seventeen-training/core": "workspace:*",
     "@seventeen-training/video-renderer": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

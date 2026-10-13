@@ -1,13 +1,26 @@
 {
   "name": "@seventeen-training/web",
-  "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "<seventeen-training> Web Component: help button, video player and Driver.js tours. Works in any framework or plain HTML.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omurillo17/rec-page.git",
+    "directory": "packages/web-component"
+  },
+  "homepage": "https://github.com/omurillo17/rec-page#readme",
+  "bugs": "https://github.com/omurillo17/rec-page/issues",
   "type": "module",
   "exports": {
-    ".": { "types": "./dist/types/index.d.ts", "default": "./dist/seventeen-training.js" }
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/seventeen-training.js"
+    }
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "sideEffects": true,
   "scripts": {
     "build": "vite build && tsc -p tsconfig.json --emitDeclarationOnly --outDir dist/types",
@@ -16,5 +29,11 @@
   "dependencies": {
     "@seventeen-training/core": "workspace:*",
     "driver.js": "1.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

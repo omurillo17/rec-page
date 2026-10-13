@@ -112,10 +112,26 @@ export async function GET() {
 }
 ```
 
-Para contenido protegido, crea `app/api/training/files/[...path]/route.ts`. Debe servir solo
-rutas referenciadas por tutoriales o recorridos visibles para la sesión, con soporte de
-`Range` (la lógica equivalente está en el ejemplo de Django). Para contenido público, basta
-con `public/training/`.
+Para contenido protegido, guarda los archivos **fuera de `public/`** (por ejemplo en `training/`) y
+sírvelos con `serveTrainingFile` (`@seventeen-training/core/server`). Esta función admite `Range`
+(para adelantar el video) y devuelve 404 a rutas fuera de la carpeta (`..`, rutas absolutas,
+enlaces simbólicos) y a tipos de archivo desconocidos. **No autentica**: revisa la sesión antes.
+
+```ts
+// app/api/training/files/[...path]/route.ts
+import { serveTrainingFile } from '@seventeen-training/core/server';
+import { auth } from '@/auth';
+
+export async function GET(request: Request, { params }: { params: Promise<{ path: string[] }> }) {
+  if (!(await auth())) return new Response(null, { status: 401 });
+  return serveTrainingFile(request, 'training', (await params).path);
+}
+```
+
+Si algunos videos son solo para ciertos roles, antes de servir comprueba que la ruta pertenezca a
+un tutorial visible para la sesión (`selectContent`), como hace el ejemplo de Django.
+Con `training build`, apunta `outDir` a esa carpeta y `publicPath` a `/api/training/files/…`.
+Para contenido público, basta con `public/training/`.
 
 Si necesitas callbacks (`onTourEnd`), usa `TrainingHelp` dentro de un componente con `'use client'`.
 
