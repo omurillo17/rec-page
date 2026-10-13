@@ -1,0 +1,66 @@
+{
+  "01-listado": {
+    "client-create": {
+      "x": 0.825,
+      "y": 0.15,
+      "width": 0.117,
+      "height": 0.057
+    },
+    "client-search": {
+      "x": 0.058,
+      "y": 0.238,
+      "width": 0.743,
+      "height": 0.057
+    },
+    "client-filter": {
+      "x": 0.809,
+      "y": 0.238,
+      "width": 0.134,
+      "height": 0.06
+    },
+    "client-table": {
+      "x": 0.059,
+      "y": 0.318,
+      "width": 0.883,
+      "height": 0.431
+    },
+    "first-row": {
+      "x": 0.059,
+      "y": 0.374,
+      "width": 0.883,
+      "height": 0.063
+    }
+  },
+  "02-busqueda": {
+    "client-create": {
+      "x": 0.825,
+      "y": 0.15,
+      "width": 0.117,
+      "height": 0.057
+    },
+    "client-search": {
+      "x": 0.058,
+      "y": 0.238,
+      "width": 0.743,
+      "height": 0.057
+    },
+    "client-filter": {
+      "x": 0.809,
+      "y": 0.238,
+      "width": 0.134,
+      "height": 0.06
+    },
+    "client-table": {
+      "x": 0.059,
+      "y": 0.318,
+      "width": 0.883,
+      "height": 0.118
+    },
+    "first-row": {
+      "x": 0.059,
+      "y": 0.374,
+      "width": 0.883,
+      "height": 0.062
+    }
+  }
+}

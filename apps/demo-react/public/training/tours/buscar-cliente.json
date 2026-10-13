@@ -1,0 +1,26 @@
+{
+  "id": "buscar-cliente",
+  "module": "clientes",
+  "title": "Buscar y filtrar clientes",
+  "steps": [
+    {
+      "element": "[data-training='client-search']",
+      "title": "Búsqueda",
+      "description": "Escribe parte del nombre o del RFC. El listado se filtra mientras escribes.",
+      "side": "bottom"
+    },
+    {
+      "element": "[data-training='client-filter']",
+      "title": "Filtrar por estado",
+      "description": "Muestra solo clientes activos, prospectos o inactivos.",
+      "side": "bottom",
+      "align": "end"
+    },
+    {
+      "element": "[data-training='client-table']",
+      "title": "Resultados",
+      "description": "Aquí aparecen los clientes que coinciden con tu búsqueda.",
+      "side": "top"
+    }
+  ]
+}

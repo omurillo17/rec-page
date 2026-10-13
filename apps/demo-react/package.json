@@ -1,0 +1,22 @@
+{
+  "name": "demo-react",
+  "private": true,
+  "type": "module",
+  "description": "React demo: Clients module using @seventeen-training/react. Owns its own training content in public/training.",
+  "scripts": {
+    "dev": "vite --port 5174 --strictPort",
+    "build": "tsc -p tsconfig.json && vite build",
+    "validate": "node ../../tools/training-cli/dist/cli.js validate --input public/training"
+  },
+  "dependencies": {
+    "@seventeen-training/react": "workspace:*",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.4"
+  }
+}

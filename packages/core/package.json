@@ -1,0 +1,13 @@
+{
+  "name": "@seventeen-training/core",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Framework-agnostic logic: manifest loading/validation, content selection, recommendations, WebVTT parsing.",
+  "type": "module",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" }
+  },
+  "files": ["dist", "src"],
+  "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit" },
+  "dependencies": { "@seventeen-training/content-schema": "workspace:*" }
+}

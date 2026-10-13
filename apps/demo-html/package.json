@@ -1,0 +1,16 @@
+{
+  "name": "demo-html",
+  "private": true,
+  "type": "module",
+  "description": "Plain HTML/JS demo: Clients module with <seventeen-training> loaded from a static file (same as Django or any server-rendered app).",
+  "scripts": {
+    "vendor": "node -e \"require('fs').mkdirSync('public/vendor',{recursive:true});require('fs').copyFileSync('../../packages/web-component/dist/seventeen-training.js','public/vendor/seventeen-training.js')\"",
+    "predev": "pnpm run vendor",
+    "dev": "vite --port 5173 --strictPort",
+    "prebuild": "pnpm run vendor",
+    "build": "vite build",
+    "capture": "node scripts/capture.mjs",
+    "validate": "node ../../tools/training-cli/dist/cli.js validate --input public/training"
+  },
+  "devDependencies": { "vite": "8.3.4", "@remotion/renderer": "4.0.535" }
+}

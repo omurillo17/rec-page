@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clientes · Demo CRM</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Training kit: one static ES module, loaded without blocking the page. -->
+    <script type="module" src="/vendor/seventeen-training.js"></script>
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span class="logo">S</span> Demo CRM <span class="pill">datos ficticios</span></div>
+      <nav aria-label="Principal">
+        <a href="#" aria-disabled="true">Inicio</a>
+        <a href="#" aria-current="page">Clientes</a>
+        <a href="#" aria-disabled="true">Ventas</a>
+        <a href="#" aria-disabled="true">Reportes</a>
+      </nav>
+      <div class="user" aria-label="Sesión">Usuario demo</div>
+    </header>
+
+    <main>
+      <div class="page-head">
+        <div>
+          <h1>Clientes</h1>
+          <p class="muted">Administra la cartera de clientes de tu empresa.</p>
+        </div>
+        <div class="actions">
+          <!-- The host app decides the URL (public or protected) and the roles; the kit only displays. -->
+          <seventeen-training manifest="/training/manifest.json" module="clientes" app-version="1.2.0" label="Ayuda del módulo"></seventeen-training>
+          <button type="button" class="btn primary" id="new-client" data-training="client-create">+ Nuevo cliente</button>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search">
+          <span class="sr-only">Buscar cliente</span>
+          <input type="search" id="search" data-training="client-search" placeholder="Buscar por nombre o RFC" autocomplete="off" />
+        </label>
+        <label>
+          <span class="sr-only">Estado</span>
+          <select id="status-filter" data-training="client-filter">
+            <option value="">Todos los estados</option>
+            <option value="Activo">Activos</option>
+            <option value="Prospecto">Prospectos</option>
+            <option value="Inactivo">Inactivos</option>
+          </select>
+        </label>
+      </div>
+
+      <section class="card" aria-label="Listado de clientes">
+        <table data-training="client-table">
+          <thead>
+            <tr><th>Nombre o razón social</th><th>RFC</th><th>Correo</th><th>Tipo</th><th>Estado</th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <p id="empty" class="muted empty" hidden>No hay clientes que coincidan con la búsqueda.</p>
+      </section>
+    </main>
+
+    <div id="drawer-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

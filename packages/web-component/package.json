@@ -1,0 +1,20 @@
+{
+  "name": "@seventeen-training/web",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "<seventeen-training> Web Component: help button, video player and Driver.js tours. Works in any framework or plain HTML.",
+  "type": "module",
+  "exports": {
+    ".": { "types": "./dist/types/index.d.ts", "default": "./dist/seventeen-training.js" }
+  },
+  "files": ["dist", "src"],
+  "sideEffects": true,
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.json --emitDeclarationOnly --outDir dist/types",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@seventeen-training/core": "workspace:*",
+    "driver.js": "1.9.0"
+  }
+}

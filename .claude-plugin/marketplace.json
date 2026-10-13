@@ -1,0 +1,12 @@
+{
+  "name": "seventeen",
+  "owner": { "name": "Seventeen Corp" },
+  "description": "Herramientas de Seventeen Corp para capacitación en apps web.",
+  "plugins": [
+    {
+      "name": "rec-page",
+      "source": "./",
+      "description": "Skill videos-capacitacion + Seventeen Training Kit (CLI training)."
+    }
+  ]
+}

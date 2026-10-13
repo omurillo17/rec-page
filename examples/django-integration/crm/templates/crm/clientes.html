@@ -1,0 +1,35 @@
+{% load static %}<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clientes · Django</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
+      header { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: #0f172a; color: #e2e8f0; }
+      header a, header button { color: #cbd5e1; background: none; border: 0; font: inherit; cursor: pointer; }
+      main { max-width: 1100px; margin: 0 auto; padding: 24px; }
+      .head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+      .btn { padding: 9px 16px; border-radius: 8px; border: 0; background: #2563eb; color: #fff; font: inherit; font-weight: 600; }
+    </style>
+    <!-- One static ES module; the page never waits for it. -->
+    <script type="module" src="{% static 'training-kit/seventeen-training.js' %}"></script>
+  </head>
+  <body>
+    <header>
+      <strong>Demo CRM · Django</strong>
+      <form method="post" action="{% url 'logout' %}">{% csrf_token %}<span>{{ user.get_username }}</span> · <button>Salir</button></form>
+    </header>
+    <main>
+      <div class="head">
+        <h1>Clientes</h1>
+        <div>
+          {# No "roles" attribute: the manifest view already filtered content with the user's real Django groups. #}
+          <seventeen-training manifest="{% url 'training-manifest' %}" module="clientes" app-version="{{ app_version }}" label="Ayuda del módulo"></seventeen-training>
+          <button class="btn" type="button" data-training="client-create">+ Nuevo cliente</button>
+        </div>
+      </div>
+      <p>Esta página solo muestra la integración. El módulo completo de clientes está en <code>apps/demo-html</code>.</p>
+    </main>
+  </body>
+</html>

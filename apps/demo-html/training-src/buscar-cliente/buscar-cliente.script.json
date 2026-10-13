@@ -1,0 +1,43 @@
+{
+  "$schema": "../../../../packages/content-schema/schema/video-script.schema.json",
+  "id": "buscar-cliente",
+  "title": "Buscar y filtrar clientes",
+  "status": "draft",
+  "scenes": [
+    {
+      "template": "intro",
+      "durationSec": 4,
+      "title": "Buscar y filtrar clientes",
+      "objective": "Encontrar rápidamente un cliente por nombre, RFC o estado.",
+      "narration": { "text": "Veamos cómo encontrar un cliente en segundos." }
+    },
+    {
+      "template": "demo",
+      "durationSec": 6,
+      "title": "Búsqueda y filtro",
+      "screenshot": "captures/01-listado.png",
+      "highlights": [
+        { "x": 0.058, "y": 0.238, "width": 0.743, "height": 0.057, "label": "Nombre o RFC" },
+        { "x": 0.809, "y": 0.238, "width": 0.134, "height": 0.06, "label": "Estado" }
+      ],
+      "narration": { "text": "Escribe parte del nombre o del RFC en el buscador. También puedes filtrar por estado." }
+    },
+    {
+      "template": "result",
+      "durationSec": 5,
+      "title": "Resultados al instante",
+      "description": "El listado se filtra mientras escribes. Aquí, la búsqueda «logístico» deja un solo cliente.",
+      "screenshot": "captures/02-busqueda.png",
+      "highlights": [{ "x": 0.059, "y": 0.374, "width": 0.883, "height": 0.062 }],
+      "narration": { "text": "El listado se actualiza mientras escribes." }
+    },
+    {
+      "template": "outro",
+      "durationSec": 4,
+      "title": "Consejo",
+      "mistakes": ["Olvidar quitar el filtro de estado y creer que el cliente no existe."],
+      "conclusion": "Busca antes de registrar para no duplicar clientes.",
+      "narration": { "text": "Consejo: busca siempre antes de registrar, así evitas duplicados." }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "demo-html", "runtimeExecutable": "pnpm", "runtimeArgs": ["--filter", "demo-html", "dev"], "port": 5173 },
+    { "name": "demo-react", "runtimeExecutable": "pnpm", "runtimeArgs": ["--filter", "demo-react", "dev"], "port": 5174 }
+  ]
+}

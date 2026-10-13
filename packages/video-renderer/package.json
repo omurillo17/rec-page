@@ -1,0 +1,26 @@
+{
+  "name": "@seventeen-training/video-renderer",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Remotion templates + Node API that turn a structured script and real screenshots into an MP4 draft with synced WebVTT subtitles.",
+  "type": "module",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" }
+  },
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "studio": "remotion studio src/remotion/index.ts"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.535",
+    "@remotion/cli": "4.0.535",
+    "@remotion/renderer": "4.0.535",
+    "@seventeen-training/core": "workspace:*",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.535"
+  },
+  "devDependencies": { "@types/react": "19.3.0" }
+}

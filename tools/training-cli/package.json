@@ -1,0 +1,17 @@
+{
+  "name": "@seventeen-training/cli",
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "training validate | list | render | preview — content tooling for Seventeen Training Kit.",
+  "type": "module",
+  "bin": { "training": "./dist/cli.js" },
+  "exports": {
+    ".": { "types": "./dist/validate.d.ts", "default": "./dist/validate.js" }
+  },
+  "files": ["dist", "src"],
+  "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit" },
+  "dependencies": {
+    "@seventeen-training/core": "workspace:*",
+    "@seventeen-training/video-renderer": "workspace:*"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "appId": "demo-crm-django",
+  "contentVersion": "1.0.0",
+  "status": "published",
+  "ui": {
+    "minVersion": "1.0.0",
+    "maxVersion": "2.0.0"
+  },
+  "modules": [
+    {
+      "id": "clientes",
+      "title": "Clientes",
+      "description": "Alta, búsqueda y consulta de clientes."
+    }
+  ],
+  "tutorials": [
+    {
+      "id": "registrar-cliente",
+      "module": "clientes",
+      "title": "Cómo registrar un cliente",
+      "description": "Da de alta un cliente con sus datos fiscales y de contacto.",
+      "status": "published",
+      "access": "protected",
+      "tourId": "registrar-cliente",
+      "tags": [
+        "alta",
+        "clientes"
+      ],
+      "accessibilityNotes": "El video no tiene audio: los subtítulos y la transcripción contienen toda la explicación.",
+      "video": {
+        "src": "videos/registrar-cliente.mp4",
+        "type": "video/mp4",
+        "poster": "videos/registrar-cliente.jpg",
+        "durationSec": 40,
+        "captions": [
+          {
+            "src": "videos/registrar-cliente.es.vtt",
+            "srclang": "es",
+            "label": "Español",
+            "kind": "captions",
+            "default": true
+          }
+        ],
+        "chapters": [
+          {
+            "startSec": 0,
+            "title": "Introducción y objetivo"
+          },
+          {
+            "startSec": 5,
+            "title": "Abre el formulario"
+          },
+          {
+            "startSec": 11,
+            "title": "Captura los datos"
+          },
+          {
+            "startSec": 21,
+            "title": "Guarda el registro"
+          },
+          {
+            "startSec": 27,
+            "title": "Resultado esperado"
+          },
+          {
+            "startSec": 33,
+            "title": "Errores frecuentes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "buscar-cliente",
+      "module": "clientes",
+      "title": "Buscar y filtrar clientes",
+      "description": "Encuentra un cliente por nombre, RFC o estado.",
+      "status": "published",
+      "tourId": "buscar-cliente",
+      "tags": [
+        "consulta",
+        "clientes"
+      ],
+      "accessibilityNotes": "El video no tiene audio: los subtítulos y la transcripción contienen toda la explicación.",
+      "video": {
+        "src": "videos/buscar-cliente.mp4",
+        "poster": "videos/buscar-cliente.jpg",
+        "durationSec": 19,
+        "captions": [
+          {
+            "src": "videos/buscar-cliente.es.vtt",
+            "srclang": "es",
+            "label": "Español",
+            "default": true
+          }
+        ],
+        "chapters": [
+          {
+            "startSec": 0,
+            "title": "Introducción"
+          },
+          {
+            "startSec": 4,
+            "title": "Búsqueda y filtro"
+          },
+          {
+            "startSec": 10,
+            "title": "Resultados"
+          },
+          {
+            "startSec": 15,
+            "title": "Consejo"
+          }
+        ]
+      },
+      "roles": [
+        "supervisores"
+      ],
+      "access": "protected"
+    }
+  ],
+  "tours": [
+    {
+      "id": "registrar-cliente",
+      "module": "clientes",
+      "title": "Registrar un cliente",
+      "status": "published",
+      "src": "tours/registrar-cliente.json"
+    },
+    {
+      "id": "buscar-cliente",
+      "module": "clientes",
+      "title": "Buscar y filtrar",
+      "status": "published",
+      "src": "tours/buscar-cliente.json",
+      "roles": [
+        "supervisores"
+      ]
+    }
+  ]
+}

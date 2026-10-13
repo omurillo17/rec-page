@@ -1,0 +1,57 @@
+{
+  "id": "registrar-cliente",
+  "module": "clientes",
+  "title": "Cómo registrar un cliente",
+  "steps": [
+    {
+      "title": "Registrar un cliente",
+      "description": "Este recorrido te muestra dónde está cada campo. No guarda ni modifica información: tú decides cuándo guardar."
+    },
+    {
+      "element": "[data-training='client-create']",
+      "title": "Abre el formulario",
+      "description": "Haz clic en «Nuevo cliente» y después pulsa «Siguiente».",
+      "side": "bottom",
+      "align": "end"
+    },
+    {
+      "element": "[data-training='client-name']",
+      "title": "Nombre o razón social",
+      "description": "Escribe el nombre completo de la persona o la razón social de la empresa.",
+      "side": "left",
+      "waitForMs": 8000
+    },
+    {
+      "element": "[data-training='client-rfc']",
+      "title": "RFC",
+      "description": "12 caracteres para personas morales y 13 para personas físicas. Se convierte a mayúsculas automáticamente.",
+      "side": "left"
+    },
+    {
+      "element": "[data-training='client-email']",
+      "title": "Correo electrónico",
+      "description": "Se usará para enviar facturas y avisos.",
+      "side": "left"
+    },
+    {
+      "element": "[data-training='client-type']",
+      "title": "Tipo de persona",
+      "description": "Elige «Moral» para empresas y «Física» para personas.",
+      "side": "left"
+    },
+    {
+      "element": "[data-training='client-import']",
+      "title": "Importar desde Excel",
+      "description": "Solo aparece para administradores. Si no lo ves, el recorrido lo omite.",
+      "optional": true,
+      "waitForMs": 0
+    },
+    {
+      "element": "[data-training='client-save']",
+      "title": "Guarda el cliente",
+      "description": "Cuando revises los datos, pulsa «Guardar cliente». El nuevo registro aparecerá al inicio del listado.",
+      "side": "top",
+      "align": "end"
+    }
+  ]
+}

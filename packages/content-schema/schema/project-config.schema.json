@@ -1,0 +1,281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "baseUrl": {
+      "type": "string",
+      "pattern": "^https?:\\/\\/"
+    },
+    "viewport": {
+      "default": {
+        "width": 1366,
+        "height": 768,
+        "scale": 1.5
+      },
+      "type": "object",
+      "properties": {
+        "width": {
+          "default": 1366,
+          "type": "integer",
+          "minimum": 320,
+          "maximum": 9007199254740991
+        },
+        "height": {
+          "default": 768,
+          "type": "integer",
+          "minimum": 320,
+          "maximum": 9007199254740991
+        },
+        "scale": {
+          "default": 1.5,
+          "type": "number",
+          "minimum": 1,
+          "maximum": 3
+        }
+      },
+      "additionalProperties": false
+    },
+    "hide": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "locale": {
+      "default": "es-MX",
+      "type": "string"
+    },
+    "setup": {
+      "type": "string"
+    },
+    "server": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string"
+        },
+        "readyUrl": {
+          "type": "string"
+        },
+        "timeoutSec": {
+          "default": 120,
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "command",
+        "readyUrl"
+      ],
+      "additionalProperties": false
+    },
+    "beforeLesson": {
+      "type": "string"
+    },
+    "macros": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "goto": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "wait": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 120000
+                }
+              },
+              "required": [
+                "goto"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "fill": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "fill",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "click": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "real": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "click"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "waitFor": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "timeout": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 120000
+                }
+              },
+              "required": [
+                "waitFor"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "sleep": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 120000
+                }
+              },
+              "required": [
+                "sleep"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eval": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "eval"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "run": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "run"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "use": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "use"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "shot": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9-]*$"
+                },
+                "regions": {
+                  "default": {},
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "required": [
+                "shot"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      }
+    },
+    "narration": {
+      "default": {
+        "rate": 0
+      },
+      "type": "object",
+      "properties": {
+        "voice": {
+          "type": "string"
+        },
+        "rate": {
+          "default": 0,
+          "type": "integer",
+          "minimum": -10,
+          "maximum": 10
+        }
+      },
+      "additionalProperties": false
+    },
+    "outDir": {
+      "type": "string"
+    },
+    "publicPath": {
+      "type": "string"
+    },
+    "dataFile": {
+      "type": "string"
+    },
+    "changeThreshold": {
+      "default": 0.004,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "baseUrl",
+    "outDir",
+    "publicPath",
+    "dataFile"
+  ],
+  "additionalProperties": false
+}

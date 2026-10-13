@@ -1,0 +1,10 @@
+node_modules/
+dist/
+out/
+*.log
+.venv/
+__pycache__/
+db.sqlite3
+
+# Motor y modelos de voz descargados (Piper); se descargan de nuevo si faltan
+voices/

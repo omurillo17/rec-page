@@ -1,0 +1,74 @@
+{
+  "$schema": "../../../../packages/content-schema/schema/video-script.schema.json",
+  "id": "registrar-cliente",
+  "title": "Cómo registrar un cliente",
+  "lang": "es",
+  "status": "draft",
+  "format": { "orientation": "landscape", "size": 1280, "fps": 30 },
+  "theme": { "primary": "#2563eb", "background": "#0f172a" },
+  "scenes": [
+    {
+      "template": "intro",
+      "durationSec": 5,
+      "title": "Cómo registrar un cliente",
+      "objective": "Dar de alta un cliente con sus datos fiscales y de contacto.",
+      "narration": { "text": "En este video aprenderás a registrar un cliente nuevo en el módulo Clientes." }
+    },
+    {
+      "template": "demo",
+      "durationSec": 6,
+      "title": "Abre el formulario",
+      "screenshot": "captures/01-listado.png",
+      "highlights": [{ "x": 0.825, "y": 0.15, "width": 0.117, "height": 0.057, "label": "Nuevo cliente" }],
+      "narration": { "text": "En la parte superior derecha, pulsa el botón Nuevo cliente. Se abrirá el formulario de registro." }
+    },
+    {
+      "template": "steps",
+      "durationSec": 10,
+      "title": "Captura los datos",
+      "steps": [
+        "Escribe el nombre o la razón social.",
+        "Captura el RFC: 12 caracteres (moral) o 13 (física).",
+        "Agrega el correo electrónico.",
+        "Elige el tipo de persona."
+      ],
+      "screenshot": "captures/02-formulario.png",
+      "highlights": [
+        { "x": 0.675, "y": 0.144, "width": 0.306, "height": 0.056 },
+        { "x": 0.675, "y": 0.258, "width": 0.306, "height": 0.056 },
+        { "x": 0.675, "y": 0.403, "width": 0.306, "height": 0.056 },
+        { "x": 0.675, "y": 0.517, "width": 0.306, "height": 0.058 }
+      ],
+      "narration": { "text": "Completa los cuatro campos. El RFC se convierte a mayúsculas automáticamente. Todos los campos son obligatorios." }
+    },
+    {
+      "template": "demo",
+      "durationSec": 6,
+      "title": "Guarda el registro",
+      "screenshot": "captures/02-formulario.png",
+      "highlights": [{ "x": 0.868, "y": 0.608, "width": 0.113, "height": 0.057, "label": "Guardar cliente" }],
+      "narration": { "text": "Revisa los datos y pulsa Guardar cliente. Si falta algo, el formulario te indicará qué campo corregir." }
+    },
+    {
+      "template": "result",
+      "durationSec": 6,
+      "title": "Cliente registrado",
+      "description": "El cliente aparece al inicio del listado con estado Prospecto y se muestra un aviso de confirmación.",
+      "screenshot": "captures/03-resultado.png",
+      "highlights": [{ "x": 0.059, "y": 0.374, "width": 0.883, "height": 0.063 }],
+      "narration": { "text": "Listo. El nuevo cliente aparece al inicio del listado con estado Prospecto." }
+    },
+    {
+      "template": "outro",
+      "durationSec": 7,
+      "title": "Antes de terminar",
+      "mistakes": [
+        "Escribir el RFC con espacios o guiones.",
+        "Registrar dos veces al mismo cliente: búscalo primero.",
+        "Confundir persona moral con persona física."
+      ],
+      "conclusion": "Si tienes dudas, abre Ayuda del módulo e inicia el recorrido guiado.",
+      "narration": { "text": "Evita estos errores frecuentes. Si tienes dudas, abre la ayuda del módulo e inicia el recorrido guiado." }
+    }
+  ]
+}
