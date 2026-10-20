@@ -12,5 +12,5 @@
     "capture": "node scripts/capture.mjs",
     "validate": "node ../../tools/training-cli/dist/cli.js validate --input public/training"
   },
-  "devDependencies": { "vite": "8.3.4", "@remotion/renderer": "4.0.535" }
+  "devDependencies": { "vite": "8.3.4", "@remotion/renderer": "4.0.536" }
 }
